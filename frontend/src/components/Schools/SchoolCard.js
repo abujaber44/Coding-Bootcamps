@@ -5,7 +5,6 @@ import ReactStars from "react-rating-stars-component";
 
 class SchoolCard extends Component {
     
-    state = {  }
     
     render() { 
         return ( 
