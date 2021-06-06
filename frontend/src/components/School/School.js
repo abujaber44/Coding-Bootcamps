@@ -39,6 +39,7 @@ class School extends Component {
         })
         this.setState({
             review: {description: "", title: "", score: ""}})
+            window.location.reload();
     }
 
 
@@ -77,3 +78,5 @@ class School extends Component {
 }
  
 export default School;
+
+

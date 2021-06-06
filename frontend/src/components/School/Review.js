@@ -12,13 +12,13 @@ class Review extends Component {
         return ( 
             <div className={styles.review_card}> 
                 <div className={styles.review_rating_container}>
-                <ReactStars
-                            count={5}
-                            value={score}
-                            size={30}
-                            edit={false}
-                            activeColor="#ffd700"
-                            />
+                    <ReactStars
+                        count={5}
+                        value={score}
+                        size={30}
+                        edit={false}
+                        activeColor="#ffd700"
+                    />
                 </div>
                 <div className={styles.title}>{title}</div>
                 <div className={styles.description}>{description}</div>

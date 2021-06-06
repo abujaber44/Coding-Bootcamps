@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchSchools } from '../../services/api';
+//import { fetchSchools } from '../../services/api';
 import SchoolCard from './SchoolCard';
 import styles from '../../mystyle.module.css'
 import { connect } from 'react-redux'
@@ -9,25 +9,25 @@ import { loadSchools } from '../../Redux/actions/actions'
 
 class Schools extends Component {
     
-    state = { 
-        schools: []
-    }
+    // state = { 
+    //     schools: []
+    // }
     
 
-    componentDidMount() {
-        fetchSchools().then(resp => {
-            this.setState({schools: resp.data})
-        })
-    }
-
     // componentDidMount() {
-    //     this.props.dispatch(loadSchools())
+    //     fetchSchools().then(resp => {
+    //         this.setState({schools: resp.data})
+    //     })
     // }
+
+    componentDidMount() {
+        this.props.dispatch(loadSchools())
+    }
 
 
     render() { 
-         
-        const schools = this.state.schools.map(school => {
+
+        const schools = this.props.schools[0] && this.props.schools[0].map(school => {
             return (
             <SchoolCard key={school.attributes.name} attributes={school.attributes} /> 
             ) 
@@ -48,10 +48,10 @@ class Schools extends Component {
     }
 }
 
-// const mapStateToProps = (state) => {
-//     return { schools: state.schools}
-// }
+const mapStateToProps = (state) => {
+    return { schools: state.schools}
+}
  
-// export default connect(mapStateToProps)(Schools);
+export default connect(mapStateToProps)(Schools);
 
-export default Schools;
+// export default Schools;

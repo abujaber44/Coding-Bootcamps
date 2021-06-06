@@ -7,7 +7,9 @@ class SchoolCard extends Component {
     
     
     render() { 
-        return ( 
+
+        return (
+             
             <div className={styles.card}>
                 <div className={styles.school_logo}>
                     <img src={this.props.attributes.image_url} alt={this.props.attributes.name}/>
