@@ -1,8 +1,9 @@
 const initialState = {
     schools : [],
-    school: {}, 
+    school: [], 
     reviews: []
 }
+
 
 function reducer(state = initialState, action) {
     switch (action.type) {
@@ -17,6 +18,9 @@ function reducer(state = initialState, action) {
 }
 
 
+
 export default reducer
+
+
 
 

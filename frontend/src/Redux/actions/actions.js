@@ -10,9 +10,9 @@ export function loadSchools() {
 }
 
 
-export function loadSchool() {
+export function loadSchool(slug) {
     return (dispatch) => {
-        fetchSchool(this.props.match.params.slug).then(resp => {
+        fetchSchool(slug).then(resp => {
             dispatch({type:"LOAD_SCHOOL", payload: {school: resp.data, reviews: resp.included} })
         })
     }
