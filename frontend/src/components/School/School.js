@@ -7,8 +7,8 @@ import ReviewForm from './ReviewForm';
 import styles from '../../mystyle.module.css';
 import { connect } from 'react-redux'
 import { loadSchool } from '../../Redux/actions/actions'
-import { Link } from 'react-router-dom';
-import {browserHistory} from 'react-router'
+import { createReview } from '../../Redux/actions/actions'
+
 
 
 
@@ -40,10 +40,8 @@ class School extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         const school_id = this.props.school[0].id
-         postReview(this.state.review.title, this.state.review.description, this.state.review.score ,school_id).then(resp => {
-             const newReview = resp.data
-           this.setState({...this.state.reviews, newReview})
-        })
+         this.props.dispatch(createReview(this.state.review.title, this.state.review.description, this.state.review.score ,school_id))
+        
         this.setState({
             review: {description: "", title: "", score: ""}})
             window.location.reload();
@@ -65,13 +63,9 @@ class School extends Component {
             )
         })
 
-   
         return ( 
             <div className={styles.wrapper}>
-                 <Link to="/">
-                        <button type="button"> Back </button>
-                </Link>
-                {console.log(this.props.school[0])}
+                {console.log(this.props.review)}
                 <div className={styles.column}>
                     <div className={styles.main}>
                    {this.props.school[0]? <Header attributes= {this.props.school[0].attributes} reviews= {this.props.reviews[0]}/> : "loading ..." }
@@ -90,9 +84,10 @@ class School extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return { school: state.school, reviews: state.reviews}
+    return { school: state.school, reviews: state.reviews, review: state.review}
 }
- 
+
+
 export default connect(mapStateToProps)(School);
  
 // export default School;

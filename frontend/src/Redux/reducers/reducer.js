@@ -1,7 +1,8 @@
 const initialState = {
     schools : [],
     school: [], 
-    reviews: []
+    reviews: [],
+    review: []
 }
 
 
@@ -12,6 +13,10 @@ function reducer(state = initialState, action) {
 
         case "LOAD_SCHOOL":
             return {...state, school: [...state.school, action.payload.school], reviews: [...state.reviews, action.payload.reviews] }
+
+        case "CREATE_REVIEW": 
+            return {...state, review: [...state.review, action.payload]}    
+        
         default:
             return state
     }

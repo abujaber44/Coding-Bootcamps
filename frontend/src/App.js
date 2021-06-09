@@ -7,7 +7,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router> 
+    <Router forceRefresh={true}> 
     <div className="App">
       <Switch>
         <Route exact path="/" component={Schools} />
@@ -21,7 +21,6 @@ function App() {
 }
 
 export default App;
-
 
 
 
