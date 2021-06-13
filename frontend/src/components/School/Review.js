@@ -7,7 +7,7 @@ class Review extends Component {
 
     render() { 
 
-        const {score, title, description} = this.props.attributes
+        const {name, score, title, description, created_at} = this.props.attributes
 
         return ( 
             <div className={styles.review_card}> 
@@ -21,6 +21,7 @@ class Review extends Component {
                     />
                 </div>
                 <div className={styles.title}>{title}</div>
+                <div className={styles.name}>{name} &nbsp; {created_at}</div>
                 <div className={styles.description}>{description}</div>
             </div>
          );

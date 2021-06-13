@@ -1,4 +1,10 @@
 class Review < ApplicationRecord
   belongs_to :school
-  validates :title, :description, :score, :presence => true
+  validates :name, :title, :description, :score, :presence => true
+
+  def created_at
+    attributes['created_at'].strftime("%m-%d-%Y")
+  end
+
+
 end

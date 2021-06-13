@@ -11,6 +11,7 @@ class ReviewForm extends Component {
                <form onSubmit={this.props.handleSubmit}>
                    <div className={styles.headline}> Share Your Review About {this.props.attributes.name}</div>
                    <div className={styles.field}>
+                       <input onChange={this.props.handleChange} value={this.props.review.name} type="text" name="name" placeholder="Your Name"/>  
                        <input onChange={this.props.handleChange} value={this.props.review.title} type="text" name="title" placeholder="Review Title"/>
                    </div>
                    <div className={styles.field}>

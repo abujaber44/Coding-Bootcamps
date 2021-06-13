@@ -21,9 +21,9 @@ export function loadSchool(slug) {
 }
 
 
-export function createReview(reviewTitle, reviewDesription, score ,school_id) {
+export function createReview(reviewName, reviewTitle, reviewDesription, score ,school_id) {
     return (dispatch) => {
-        postReview(reviewTitle, reviewDesription, score ,school_id).then(resp => {
+        postReview(reviewName, reviewTitle, reviewDesription, score ,school_id).then(resp => {
             dispatch({type: "CREATE_REVIEW", payload: resp.data})
         })
     }

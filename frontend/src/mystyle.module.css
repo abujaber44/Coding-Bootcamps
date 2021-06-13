@@ -231,6 +231,13 @@
     font-size: 14px;
 }
 
+.name {
+    padding: 0 0 20px 0;
+    font-size: 14px;
+    font-style: italic;
+    color: gray;
+}
+
 .review_rating_container {
     display: flex;
     flex-direction: row;

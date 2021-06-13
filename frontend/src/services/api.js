@@ -36,10 +36,10 @@ export function fetchSchool(slug) {
   return fetch(URL + 'schools' + `/${slug}`).then(parseJSON)
 }
 
-export function postReview(reviewTitle, reviewDesription, score ,school_id) {
+export function postReview(reviewName, reviewTitle, reviewDesription, score ,school_id) {
   return fetch(URL + 'reviews', {
     method: "POST",
     headers: headers,
-    body: JSON.stringify({title: reviewTitle, description: reviewDesription, score: score ,school_id: school_id})
+    body: JSON.stringify({name: reviewName, title: reviewTitle, description: reviewDesription, score: score ,school_id: school_id})
   }).then(parseJSON)
 }

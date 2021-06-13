@@ -40,10 +40,10 @@ class School extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         const school_id = this.props.school[0].id
-         this.props.dispatch(createReview(this.state.review.title, this.state.review.description, this.state.review.score ,school_id))
+         this.props.dispatch(createReview(this.state.review.name, this.state.review.title, this.state.review.description, this.state.review.score ,school_id))
         
         this.setState({
-            review: {description: "", title: "", score: ""}})
+            review: {name: "", description: "", title: "", score: ""}})
             window.location.reload();
     }
 
@@ -65,7 +65,6 @@ class School extends Component {
 
         return ( 
             <div className={styles.wrapper}>
-                {console.log(this.props.review)}
                 <div className={styles.column}>
                     <div className={styles.main}>
                    {this.props.school[0]? <Header attributes= {this.props.school[0].attributes} reviews= {this.props.reviews[0]}/> : "loading ..." }
