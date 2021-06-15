@@ -7,7 +7,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router forceRefresh={true}> 
+    <Router> 
     <div className="App">
       <Switch>
         <Route exact path="/" component={Schools} />

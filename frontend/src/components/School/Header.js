@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styles from '../../mystyle.module.css'
 import ReactStars from "react-rating-stars-component";
-
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
     
@@ -14,6 +14,9 @@ class Header extends Component {
     
         return (
             <div className={styles.header_wrapper}>
+                <div className={styles.schools_link}>
+                    <Link to= "/"> View all Schools </Link>
+                </div>
                 <h1> <img src={image_url} alt={name} /> {name} </h1>
                 <div>
                     <div className= {styles.total_reviews}> {totalReviews} Reviews</div>

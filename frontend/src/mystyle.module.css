@@ -6,26 +6,33 @@
 }
 
 .header {
-    padding: 100px 100px 10px 100px;
+    padding: 10px 100px 10px 100px;
 }
 
 .header h1 {
     font-size: 40px;
 }
 
+.header img {
+    width: auto;
+    height: auto;
+}
+
 .subheader {
     font-weight: 300;
     font-size: 25px;
+    font-weight: bold;
+    padding: 20px 20px 10px 20px;
+    font-style: italic;
 }
 
-.gird {
+.grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    padding: 20px;
+    grid-gap: 50px;
+    padding: 20px 0 20px 0;
     height: 100%;
     width: 100%;
-    grid-auto-rows: 100px;
 }
 
 .card {
@@ -33,6 +40,7 @@
     border-style: solid;
     background: rgb(255, 255, 255);
     text-align: center;
+    box-shadow: 10px 10px #888888;
 }
 
 .school_logo {
@@ -51,7 +59,7 @@
 }
 
 .school_name {
-    padding: 50px 50px;
+    padding: 25px 25px;
     font-size: 30px;
     margin-left: auto;
     margin-right: auto;
@@ -246,4 +254,21 @@
 .stars {
     margin-left: auto;
     margin-right: auto;
+}
+
+.schools_link {
+    margin: 30px 0 20px 0;
+    height: 50px;
+}
+
+.schools_link a {
+    color: white;
+    background: black;
+    border-radius: 4px;
+    padding: 10px 10px;
+    border: 1px solid black;
+    width: 100%;
+    text-decoration: none;
+    font-size: small;
+    font-weight: 700;
 }

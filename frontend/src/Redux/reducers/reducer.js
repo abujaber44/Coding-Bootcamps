@@ -9,10 +9,10 @@ const initialState = {
 function reducer(state = initialState, action) {
     switch (action.type) {
         case "LOAD_SCHOOLS":
-            return {...state, schools: [...state.schools, action.payload]}
+            return {...state, schools: [...state.schools, action.payload], school: [], reviews:[]}
 
         case "LOAD_SCHOOL":
-            return {...state, school: [...state.school, action.payload.school], reviews: [...state.reviews, action.payload.reviews] }
+            return {...state, school: [...state.school, action.payload.school], reviews: [...state.reviews, action.payload.reviews]}
 
         case "CREATE_REVIEW": 
             return {...state, review: [...state.review, action.payload]}    

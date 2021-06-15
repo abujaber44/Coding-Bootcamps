@@ -10,13 +10,11 @@ import { loadSchool } from '../../Redux/actions/actions'
 import { createReview } from '../../Redux/actions/actions'
 
 
-
-
 class School extends Component {
 
     state = { 
         review: {}
-     }
+    }
 
     //  componentDidMount() {
     //     fetchSchool(this.props.match.params.slug).then(resp => {
@@ -29,6 +27,7 @@ class School extends Component {
     componentDidMount() {
         this.props.dispatch(loadSchool(this.props.match.params.slug))
     }
+
 
      handleChange = (e) => {
         e.preventDefault()
@@ -52,7 +51,7 @@ class School extends Component {
         let review = {...this.state.review}
         review.score = newRating;
         this.setState({review})
-      };
+    };
 
      
     render() { 
@@ -81,6 +80,7 @@ class School extends Component {
          );
     }
 }
+
 
 const mapStateToProps = (state) => {
     return { school: state.school, reviews: state.reviews, review: state.review}

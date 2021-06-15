@@ -29,7 +29,7 @@ class Schools extends Component {
                     <h1>Coding Bootcamps Reviews</h1>
                     <div className={styles.subheader}> Honest School Reviews</div>
                 </div>
-               <div className={styles.grid}>
+                <div className={styles.grid}>
                    {schools}
                </div> 
             </div>
@@ -38,7 +38,7 @@ class Schools extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return { schools: state.schools}
+    return { schools: state.schools, school: state.school}
 }
  
 export default connect(mapStateToProps)(Schools);
