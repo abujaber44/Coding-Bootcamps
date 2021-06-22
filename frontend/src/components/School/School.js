@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { fetchSchool } from '../../services/api';
-import { postReview } from '../../services/api';
 import Header from './Header';
 import Review from './Review';
 import ReviewForm from './ReviewForm';
@@ -16,18 +14,9 @@ class School extends Component {
         review: {}
     }
 
-    //  componentDidMount() {
-    //     fetchSchool(this.props.match.params.slug).then(resp => {
-    //         this.setState({school: resp.data})
-    //         this.setState({reviews: resp.included})
-    //     });
-    // }
-
-
     componentDidMount() {
         this.props.dispatch(loadSchool(this.props.match.params.slug))
     }
-
 
      handleChange = (e) => {
         e.preventDefault()
@@ -89,6 +78,6 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps)(School);
  
-// export default School;
+
 
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SchoolCard from './SchoolCard';
+import { Link } from 'react-router-dom'
 import styles from '../../mystyle.module.css'
 import { connect } from 'react-redux'
 import { loadSchools } from '../../Redux/actions/actions'
@@ -24,6 +25,10 @@ class Schools extends Component {
 
 
         return ( 
+            <>
+            <div className={styles.about_link}>
+                <Link to= "/about"> About </Link>
+            </div>
             <div className={styles.schools}>
                 <div className={styles.header}>
                     <h1>Coding Bootcamps Reviews</h1>
@@ -33,6 +38,7 @@ class Schools extends Component {
                    {schools}
                </div> 
             </div>
+            </>
          );
     }
 }
