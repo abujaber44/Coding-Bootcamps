@@ -27,7 +27,7 @@ $ npm start
 
 ## Usage:
 
-Upon launching the application, the user will be able view the list of Coding Bootcamps and create new reviews.
+Upon launching the application, the user will be able to view the list of Coding Bootcamps and create new reviews.
 
 ## License:
 
