@@ -22,6 +22,7 @@ class SchoolCard extends Component {
                             size={30}
                             edit={false}
                             activeColor="#ffd700"
+                            isHalf={true}
                             />
                 <div className={styles.school_link}>
                     <Link to={`/schools/${this.props.attributes.slug}`}>View School</Link>

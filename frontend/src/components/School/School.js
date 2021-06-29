@@ -11,14 +11,23 @@ import { createReview } from '../../Redux/actions/actions'
 class School extends Component {
 
     state = { 
-        review: {}
+        review: {}, 
     }
+
 
     componentDidMount() {
         this.props.dispatch(loadSchool(this.props.match.params.slug))
     }
 
-     handleChange = (e) => {
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.review[0] !== this.props.review[0]) {
+            this.props.dispatch(loadSchool(this.props.match.params.slug))
+        }
+    }
+
+  
+    handleChange = (e) => {
         e.preventDefault()
         let review = this.state.review;
         review[e.target.name] = e.target.value;
@@ -28,11 +37,9 @@ class School extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         const school_id = this.props.school[0].id
-         this.props.dispatch(createReview(this.state.review.name, this.state.review.title, this.state.review.description, this.state.review.score ,school_id))
-        
+        this.props.dispatch(createReview(this.state.review.name, this.state.review.title, this.state.review.description, this.state.review.score, school_id))
         this.setState({
-            review: {name: "", description: "", title: "", score: ""}})
-            window.location.reload();
+            review: {name: "", description: "", title: "", score: ""}});
     }
 
 
@@ -40,7 +47,7 @@ class School extends Component {
         let review = {...this.state.review}
         review.score = newRating;
         this.setState({review})
-    };
+    }
 
      
     render() { 
@@ -55,8 +62,8 @@ class School extends Component {
             <div className={styles.wrapper}>
                 <div className={styles.column}>
                     <div className={styles.main}>
-                   {this.props.school[0]? <Header attributes= {this.props.school[0].attributes} reviews= {this.props.reviews[0]}/> : "loading ..." }
-                   {reviews}
+                    {this.props.school[0] ? <Header attributes= {this.props.school[0].attributes} reviews= {this.props.reviews[0]}/> : "loading ..." }
+                    {reviews}
                    </div>
                 </div>
                 <div className={styles.column_2}>

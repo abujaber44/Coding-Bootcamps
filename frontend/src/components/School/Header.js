@@ -27,6 +27,7 @@ class Header extends Component {
                             size={30}
                             edit={false}
                             activeColor="#ffd700"
+                            isHalf={true}
                         />
                     </div>
                     <div className= {styles.total_out_of}> {avg_score} out of 5 stars </div>
